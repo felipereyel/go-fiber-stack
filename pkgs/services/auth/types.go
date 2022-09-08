@@ -6,9 +6,6 @@ type withId struct {
 
 type workspace struct {
 	Id      string
-	Forms   []withId
-	Hooks   []withId
-	Jobs    []withId
 	Scripts []withId
 }
 

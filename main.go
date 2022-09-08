@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/abstra-app/PROJECT_NAME/pkgs/config"
-	"github.com/abstra-app/PROJECT_NAME/pkgs/handler"
+	"github.com/felipereyel/PROJECT_NAME/pkgs/config"
+	"github.com/felipereyel/PROJECT_NAME/pkgs/handler"
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"

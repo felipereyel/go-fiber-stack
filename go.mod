@@ -1,4 +1,4 @@
-module github.com/abstra-app/PROJECT_NAME
+module github.com/felipereyel/PROJECT_NAME
 
 go 1.18
 

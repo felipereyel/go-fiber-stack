@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"errors"
 
-	"github.com/abstra-app/PROJECT_NAME/pkgs/config"
-	"github.com/abstra-app/PROJECT_NAME/pkgs/utils"
+	"github.com/felipereyel/PROJECT_NAME/pkgs/config"
+	"github.com/felipereyel/PROJECT_NAME/pkgs/utils"
 )
 
 func authClient(method string, path string, headers utils.Headers) ([]byte, error) {
@@ -15,7 +15,7 @@ func authClient(method string, path string, headers utils.Headers) ([]byte, erro
 }
 
 func GetAuthorInfo(headers utils.Headers) (*AuthInfo, error) {
-	res, err := authClient("GET", "abstra-cloud", headers)
+	res, err := authClient("GET", "PROJECT_NAME", headers)
 	if err != nil {
 		return nil, err
 	}

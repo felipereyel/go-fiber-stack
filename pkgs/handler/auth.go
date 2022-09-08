@@ -3,9 +3,9 @@ package handler
 import (
 	"fmt"
 
-	"github.com/abstra-app/PROJECT_NAME/pkgs/config"
-	"github.com/abstra-app/PROJECT_NAME/pkgs/services/auth"
-	"github.com/abstra-app/PROJECT_NAME/pkgs/utils"
+	"github.com/felipereyel/PROJECT_NAME/pkgs/config"
+	"github.com/felipereyel/PROJECT_NAME/pkgs/services/auth"
+	"github.com/felipereyel/PROJECT_NAME/pkgs/utils"
 	"github.com/gofiber/fiber/v2"
 )
 
@@ -20,13 +20,13 @@ func InternalAuth(c *fiber.Ctx) error {
 type authScope string
 
 const (
-	HookScope authScope = "hookId"
+	HookScope authScope = "scriptId"
 )
 
 func hookCheck(id string, info *auth.AuthInfo) bool {
 	for _, ws := range info.Workspaces {
-		for _, hook := range ws.Hooks {
-			if hook.Id == id {
+		for _, s := range ws.Scripts {
+			if s.Id == id {
 				return true
 			}
 		}
@@ -58,7 +58,7 @@ func scopeIsAuthorized(scope authScope, c *fiber.Ctx) bool {
 
 	switch scope {
 	case HookScope:
-		return hookCheck(c.Params("hookId"), authInfo)
+		return hookCheck(c.Params(HookScope), authInfo)
 	default:
 		return false
 	}
